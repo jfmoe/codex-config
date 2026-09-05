@@ -7,6 +7,7 @@ approval_policy = "never"
 approvals_reviewer = "user"
 personality = "pragmatic"
 model_reasoning_summary = "auto"
+check_for_update_on_startup = false
 
 [model_providers.OpenAI]
 name = "OpenAI"

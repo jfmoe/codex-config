@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+auth.json
+config.local.toml
+config.migrated*.toml
+backups/
+*.bak
+*.log

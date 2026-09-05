@@ -1,0 +1,74 @@
+model_provider = "OpenAI"
+model = "gpt-6-astra"
+model_reasoning_effort = "medium"
+model_context_window = 500000
+sandbox_mode = "danger-full-access"
+approval_policy = "never"
+approvals_reviewer = "user"
+personality = "pragmatic"
+model_reasoning_summary = "auto"
+
+[model_providers.OpenAI]
+name = "OpenAI"
+base_url = "https://provider.example.invalid"
+wire_api = "responses"
+requires_openai_auth = true
+experimental_bearer_token = "<TARGET_PROVIDER_BEARER_TOKEN>"
+
+[agents.default]
+description = "Handle delegated tasks that require exploration, implementation, or multiple dependent steps when no specialized agent fits."
+config_file = "./agents/default.toml"
+
+[agents.worker]
+description = "Implement features and fixes as an execution-focused subagent; use only when explicitly delegated."
+config_file = "./agents/worker.toml"
+
+[features.multi_agent_v2]
+hide_spawn_agent_metadata = false
+tool_namespace = "agents"
+max_concurrent_threads_per_session = 4
+
+[desktop]
+appearanceLightCodeThemeId = "proof"
+keepRemoteControlAwakeWhilePluggedIn = true
+appearanceDarkCodeThemeId = "absolutely"
+show-context-window-usage = true
+localeOverride = "zh-CN"
+followUpQueueMode = "steer"
+dock-icon-preference = "app-default"
+git-pull-request-merge-method = "merge"
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh", "max"]
+conversationDetailMode = "STEPS_COMMANDS"
+composerEnterBehavior = "enter"
+realtimeVoiceScreenContextEnabled = true
+
+[desktop.appearanceLightChromeTheme]
+accent = "#3d755d"
+contrast = 45
+ink = "#2f312d"
+opaqueWindows = false
+surface = "#f5f3ed"
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#3d755d"
+diffRemoved = "#ba2623"
+skill = "#5f6ac2"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#cc7d5e"
+contrast = 60
+ink = "#f9f9f7"
+opaqueWindows = false
+surface = "#2d2d2b"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = "Maple Mono NF, 等距更纱黑体 SC"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#00c853"
+diffRemoved = "#ff5f38"
+skill = "#cc7d5e"
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "project-name", "git-branch", "context-used"]
+status_line_use_colors = true

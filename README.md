@@ -27,8 +27,8 @@
 | 名称 | 来源 | 用途 |
 | --- | --- | --- |
 | `show-me` | [humanlayer/skills](https://github.com/humanlayer/skills/tree/main/plugins/show-me/skills/show-me) | 用图示、代码结构和 HTML 辅助解释 |
-| `forager` | [jfmoe/forager](https://github.com/jfmoe/forager)，技能位于 [`skills/forager`](https://github.com/jfmoe/forager/tree/main/skills/forager) | 网页检索与研究；技能依赖 forager CLI |
-| `kimi-datasource` | Kimi Code 内置数据源 skill | 垂直数据源查询（股票、宏观、政府数据与标准、企业、学术、法律、财经资讯） |
+| `forager` | [jfmoe/forager](https://github.com/jfmoe/forager)，技能位于 [`skills/forager`](https://github.com/jfmoe/forager/tree/main/skills/forager) | 网络搜索/调研；技能依赖 forager CLI |
+| `kimi-datasource` | Kimi Code 内置数据源 skill | 结构化数据查询（股票、宏观、政府数据与标准、企业、学术、法律、财经资讯），亦可作为 forager 的补充 |
 
 迁移时检查目标机是否已安装这些技能及 forager CLI，向用户说明缺失项和来源，并询问是否安装。用户同意后按上游安装说明执行；选择跳过时记录缺失能力。forager 的服务凭据由用户在目标机配置；`kimi-datasource` 随 Kimi Code 提供，依赖其登录凭据，无需单独安装。Homebrew 是 `AGENTS.md` 中的软件安装工具偏好。
 

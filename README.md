@@ -28,8 +28,10 @@
 | --- | --- | --- |
 | `show-me` | [humanlayer/skills](https://github.com/humanlayer/skills/tree/main/plugins/show-me/skills/show-me) | 用图示、代码结构和 HTML 辅助解释 |
 | `forager` | [jfmoe/forager](https://github.com/jfmoe/forager)，技能位于 [`skills/forager`](https://github.com/jfmoe/forager/tree/main/skills/forager) | 网络搜索/调研；技能依赖 forager CLI |
+| `test-layers` | [jfmoe/skills](https://github.com/jfmoe/skills)，技能位于 [`skills/test-layers`](https://github.com/jfmoe/skills/tree/main/skills/test-layers) | 按层和成本写测试、审查或裁剪套件 |
+| `tdd` | [mattpocock/skills](https://github.com/mattpocock/skills)，技能位于 [`skills/engineering/tdd`](https://github.com/mattpocock/skills/tree/main/skills/engineering/tdd) | 红绿循环 |
 
-迁移时检查目标机是否已安装这些技能及 forager CLI，向用户说明缺失项和来源，并询问是否安装。用户同意后按上游安装说明执行；选择跳过时记录缺失能力。forager 的服务凭据由用户在目标机配置。Homebrew 是 `AGENTS.md` 中的软件安装工具偏好。
+迁移时检查目标机是否已安装这些技能及 forager CLI，向用户说明缺失项和来源，并询问是否安装。用户同意后按上游安装说明执行；选择跳过时记录缺失能力。forager 的服务凭据由用户在目标机配置。Homebrew 是 `AGENTS.md` 中的软件安装工具偏好。`test-layers` 用 `npx skills add https://github.com/jfmoe/skills --skill test-layers` 安装。
 
 ## 当前行为
 
@@ -42,7 +44,7 @@
 ## 迁移
 
 1. 检查目标机 Codex 版本、`CODEX_HOME`、现有指令、角色和配置，核对模型、上下文窗口及配置键支持情况。
-2. 检查 `show-me`、`forager` 技能及 forager CLI 的安装状态，按“工具与技能来源”询问用户是否安装缺失项。在目标机备份将要修改的文件，保留权限并记录原路径。对未支持的模型、配置键或缺失依赖，报告差异并等待用户选择。
+2. 检查 `show-me`、`forager`、`test-layers`、`tdd` 技能及 forager CLI 的安装状态，按“工具与技能来源”询问用户是否安装缺失项。在目标机备份将要修改的文件，保留权限并记录原路径。对未支持的模型、配置键或缺失依赖，报告差异并等待用户选择。
 3. 合并或写入已审核的 `AGENTS.md` 和角色文件，保留无关配置与角色。
 4. 将目标机现有 `config.toml` 复制为 `config.migrated.toml`，只在副本中按键合并仓库配置；原配置保持字节级不变。若原配置不存在，可新建候选文件；若候选文件已存在，则停止并选择新文件名。
 5. 保留目标机已有认证。由用户自行设置目标服务地址、填写或删除令牌占位符，并选择沙箱与审批策略；不得从其他机器复制凭据，也不得回显真实凭据。

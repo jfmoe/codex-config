@@ -1,6 +1,6 @@
 name = "explorer"
 description = "Investigate read-heavy questions across code, call chains, logs, documents, and external sources."
-model = "gpt-5.6-terra"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "high"
 
 developer_instructions = """

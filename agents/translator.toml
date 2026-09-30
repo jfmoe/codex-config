@@ -1,6 +1,6 @@
 name = "translator"
 description = "Translate, proofread, or polish assigned content while preserving meaning and structure."
-model = "gpt-5.6-terra"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "medium"
 
 developer_instructions = """

@@ -1,5 +1,5 @@
 model_provider = "OpenAI"
-model = "gpt-6-astra"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "medium"
 model_context_window = 500000
 sandbox_mode = "danger-full-access"
@@ -8,11 +8,13 @@ approvals_reviewer = "user"
 personality = "pragmatic"
 model_reasoning_summary = "auto"
 check_for_update_on_startup = false
+service_tier = "default"
 
 [model_providers.OpenAI]
 name = "OpenAI"
 base_url = "https://provider.example.invalid"
 wire_api = "responses"
+supports_websockets = true
 requires_openai_auth = true
 experimental_bearer_token = "<TARGET_PROVIDER_BEARER_TOKEN>"
 
@@ -27,7 +29,7 @@ config_file = "./agents/worker.toml"
 [features.multi_agent_v2]
 hide_spawn_agent_metadata = false
 tool_namespace = "agents"
-max_concurrent_threads_per_session = 4
+max_concurrent_threads_per_session = 2
 
 [desktop]
 appearanceLightCodeThemeId = "proof"

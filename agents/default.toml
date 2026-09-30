@@ -1,6 +1,6 @@
 name = "default"
 description = "Handle delegated tasks that require exploration, implementation, or multiple dependent steps when no specialized agent fits."
-model = "gpt-5.6-terra"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "high"
 
 developer_instructions = """
